@@ -1,6 +1,8 @@
 import React from 'react'
 import schoolData from "../data/export.json";
 import {Card, Stack} from '@mui/material';
+import { ProgressBar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
     
@@ -20,35 +22,51 @@ const Dashboard = () => {
   return (
     <>
     <Stack 
+    direction="row"
+    justifyContent="space-between"
         
     >
     <Card 
         
-        style={{display:'flex',textDecoration:'none', color: '#3A1212',justifyContent : 'space-between', marginTop:'12vh' }}
+        style={{textDecoration:'none', color: '#3A1212',justifyContent : 'space-between', marginTop:'12vh' }}
         
     >
-        <div><h2>Total no of schools in Kathmandu:-</h2></div>
-        <div><h3>{totalschool}</h3></div>
+        <div><h2>Total no of schools in Kathmandu:-</h2><i class="fa-solid fa-school fa-3x"></i><h3>{totalschool}</h3></div>
+        <div className="progressBar">
+        <ProgressBar striped variant="success" now={100} />
+        
+        </div>
+        
+        
 
     </Card>
     <Card 
         
-        style={{display:'flex',textDecoration:'none', color: '#3A1212',justifyContent : 'space-between' }}
+        style={{textDecoration:'none', color: '#3A1212',justifyContent : 'space-between', marginTop:'12vh' }}
     >
-        <div><h2>Total no of government schools in Kathmandu:-</h2></div>
-        <div><h3>{totalgovernment}</h3></div>
+        <div><h2>Total no of government schools in Kathmandu:-</h2><i class="fa-solid fa-school-flag fa-3x"></i><h3>{totalgovernment}</h3></div>
 
+        <div className="progressBar">
+   
+        
+        <ProgressBar striped variant="warning" now={20} />
+        
+    </div>
     </Card>
     <Card 
         
-        style={{display:'flex',textDecoration:'none', color: '#3A1212', justifyContent : 'space-between'}}
+        style={{textDecoration:'none', color: '#3A1212', justifyContent : 'space-between', marginTop:'12vh'}}
     >
-        <div><h2>Total no of private schools in Kathmandu:-</h2></div>
-        <div><h3>{totalprivate}</h3></div>
+       <div><h2>Total no of private schools in Kathmandu:-</h2><i class="fa-solid fa-school-lock fa-3x"></i><h3>{totalprivate}</h3></div>
 
+       <div className="progressBar">
+        <ProgressBar striped variant="info" now={70} />
+    </div>
+    
     </Card>
 
     </Stack>
+    
     
     </>
   )

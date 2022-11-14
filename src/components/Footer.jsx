@@ -31,7 +31,7 @@ const Footer = () => {
               <div className='input flex' style={{justifyContent:'center', alignItems:'center'}} >
                 <input type='text' placeholder='Email Address' style={{display:'flex',maxWidth:'180vh',marginLeft:'10vh'}}/>
                 <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', }}>
-                  <button style={{height: '6vh'}}>Subscribe</button>
+                  <button className='btn5' style={{height: '6vh'}}>Subscribe</button>
                 </div>
                 
               </div>
